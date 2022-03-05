@@ -9,6 +9,10 @@ export default function TextBox(props) {
     let upperText = enteredText.toUpperCase()
     setText(upperText)
   }
+  const convertToLowerCase = () => {
+      let lowercaseTxt = text.toLowerCase()
+      setText(lowercaseTxt)
+  }
   const updateTextValue = (event) => {
       setText(event.target.value)
   }
@@ -17,7 +21,8 @@ export default function TextBox(props) {
       <div className="mb-3">
           <h1 className='my-4'>{props.heading}</h1>
           <textarea className="form-control" value={text} onChange={updateTextValue} rows="10"></textarea>
-          <button className="btn btn-primary btn-lg mt-4" onClick={convertToUpperCase}>Convert to Uppercase</button>
+          <button className="btn btn-primary btn-lg mt-4 mr-3" onClick={convertToUpperCase}>Convert to Uppercase</button>
+          <button className="btn btn-success btn-lg mt-4" onClick={convertToLowerCase}>Convert to Lowercase</button>
        </div>
     </div>
   );
