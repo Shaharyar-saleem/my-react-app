@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 
 
 export default function TextBox(props) {
-  const [text, setText] = useState("Type your text here")
+  const [text, setText] = useState("")
   const convertToUpperCase = () => {
     let enteredText = text
     let upperText = enteredText.toUpperCase()
@@ -18,7 +18,6 @@ export default function TextBox(props) {
         return index === 0 ? text.toLowerCase() : text.toUpperCase()
       })
       setText(camelcaseTxt)
-      console.log("camelcase:", camelcaseTxt)
   }
   const copyToClipboard = () => {
     navigator.clipboard.writeText(text)
@@ -28,7 +27,8 @@ export default function TextBox(props) {
       setText(event.target.value)
   }
   return (
-    <div>
+      <>
+    <div className='container'>
       <div className="mb-3">
           <h1 className='my-4'>{props.heading}</h1>
           <textarea className="form-control mb-3" value={text} onChange={updateTextValue} rows="10"></textarea>
@@ -38,6 +38,16 @@ export default function TextBox(props) {
           <button className="btn btn-danger btn-lg mx-2" onClick={copyToClipboard}>Copy the Text</button>
        </div>
     </div>
+    <div className="container">
+        <h2>Your Text Summary</h2>
+        <div className="bg-light p-2">
+        <p><b>{text.split(' ').length}</b> <i>Words</i> AND <b>{text.length}</b>  <i>Characters</i></p>
+        <p><b>{0.0032 * text.split(' ').length}</b> Minutes to read this text.</p>
+        </div>
+        <h2>Preview</h2>
+        <p>{text}</p>
+    </div>
+    </>
   );
 }
 
