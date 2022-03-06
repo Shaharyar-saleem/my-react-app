@@ -20,10 +20,10 @@ export default function TextBox(props) {
       setText(camelcaseTxt)
       console.log("camelcase:", camelcaseTxt)
   }
-//   const copyToClipboard = (event) => {
-//       console.log(this.state.textToCopy)
-//       navigator.clipboard.writeText(event.target.value)
-//   }
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(text)
+    alert("Text Copied")
+  }
   const updateTextValue = (event) => {
       setText(event.target.value)
   }
@@ -35,7 +35,7 @@ export default function TextBox(props) {
           <button className="btn btn-primary btn-lg mr-4" onClick={convertToUpperCase}>Convert to Uppercase</button>
           <button className="btn btn-success btn-lg mx-3" onClick={convertToLowerCase}>Convert to Lowercase</button>
           <button className="btn btn-secondary btn-lg mx-2" onClick={convertToCamelCase}>Convert to CamelCase</button>
-          <button className="btn btn-danger btn-lg mx-2" onClick={() => {navigator.clipboard.writeText(this.state.textToCopy)}}>Copy the Text</button>
+          <button className="btn btn-danger btn-lg mx-2" onClick={copyToClipboard}>Copy the Text</button>
        </div>
     </div>
   );
