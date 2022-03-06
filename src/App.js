@@ -9,7 +9,7 @@ function App() {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-           <TextBox heading="Enter Text in this box for Anylyse" />
+           <TextBox heading="Enter Text In The Box Bellow" />
           </div>
         </div>
       </div>
