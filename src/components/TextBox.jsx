@@ -32,19 +32,17 @@ export default function TextBox(props) {
       setText(event.target.value)
   }
 
-
-  
   return (
       <>
     <div className='container py-5'>
       <div className="mb-3">
           <h1 className='my-4'>{props.heading}</h1>
-          <textarea className="form-control mb-3" value={text} onChange={updateTextValue} rows="10"></textarea>
-          <button className="btn btn-primary btn-lg mr-4" onClick={convertToUpperCase}>Convert to UpperCase</button>
-          <button className="btn btn-success btn-lg mx-3" onClick={convertToLowerCase}>Convert to LowerCase</button>
-          <button className="btn btn-secondary btn-lg mx-2" onClick={convertToCamelCase}>Convert to CamelCase</button>
-          <button className="btn btn-success btn-lg mx-2" onClick={copyToClipboard}>Copy Text</button>
-          <button className="btn btn-danger btn-lg mx-2" onClick={clearText}>Clear Text</button>
+          <textarea className={`form-control mb-3 bg-${props.themeMode}`} value={text} onChange={updateTextValue} style={{color: `${props.themeMode === 'dark' ? 'white' : 'black'}`}} rows="10"></textarea>
+          <button className="btn btn-primary btn-lg mr-2" onClick={convertToUpperCase}>Convert to UpperCase</button>
+          <button className="btn btn-primary btn-lg mx-2" onClick={convertToLowerCase}>Convert to LowerCase</button>
+          <button className="btn btn-primary btn-lg mx-2" onClick={convertToCamelCase}>Convert to CamelCase</button>
+          <button className="btn btn-primary btn-lg mx-2" onClick={copyToClipboard}>Copy Text</button>
+          <button className="btn btn-primary btn-lg mx-2" onClick={clearText}>Clear Text</button>
        </div>
     </div>
     <div className="container py-4">

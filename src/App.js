@@ -26,7 +26,7 @@ function App() {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-           <TextBox heading="Enter Text In The Box Bellow" />
+           <TextBox heading="Enter Text In The Box Bellow" themeMode={mode} />
           </div>
         </div>
       </div>
