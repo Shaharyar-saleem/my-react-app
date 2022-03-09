@@ -51,8 +51,8 @@ export default function TextBox(props) {
         <p><b>{text.split(' ').length}</b> <i>Words</i> AND <b>{text.length}</b>  <i>Characters</i></p>
         <p><b>{0.0032 * text.split(' ').length}</b> Minutes to read this text.</p>
         </div>
-        <h2>Preview</h2>
-        <p>{text}</p>
+        <h2>{text ? 'Preview' : 'Enter Text to preview'}</h2>
+        <p style={{fontSize: '20px'}}>{text}</p>
     </div>
     </>
   );

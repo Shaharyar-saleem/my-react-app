@@ -2,11 +2,17 @@ import React, { useState } from "react";
 import propTypes from "prop-types";
 
 export default function Navbar(props) {
-  const navToggle ={
+  const navToggle = {
     float: 'right',
     right: '33px',
     position: 'absolute',
   }
+  // if(props.themeMode == 'dark'){
+  //   props.alert('Dark mode has been enabled successfully', 'success')
+  // }
+  // else{
+  //   props.alert('Light mode has been enabled successfully', 'success')
+  // }
   return (
     <>
       <nav
@@ -35,7 +41,7 @@ export default function Navbar(props) {
                 </a>
               </li>
             </ul>
-            <form class="form-inline float-right" style={navToggle}>
+            <form className="form-inline float-right" style={navToggle}>
               <div className="form-check form-switch">
                 <input
                   className="form-check-input"

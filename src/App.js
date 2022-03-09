@@ -2,7 +2,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import TextBox from './components/TextBox';
 import React, {useState} from 'react';
-
+import Alert from "./components/Alert";
 
 function App() {
    const [mode, setMode] = useState('light')
@@ -13,16 +13,28 @@ function App() {
        setMode('light')
        document.body.style.backgroundColor = 'white'
        document.body.style.color = 'black'
+       createAlert("Light mode has been enabled successfully", "success")
      }
      else{
        setMode('dark')
        document.body.style.backgroundColor = 'black'
        document.body.style.color = 'white'
+       createAlert("Dark mode has been enabled successfully", "success")
      }
+   }
+
+   const [alert, setAlert] = useState(null);
+
+   const createAlert = (message, typ) => {
+        setAlert({
+          msg: message,
+          type: typ,
+        })
    }
   return (
     <>
       <Navbar title="TextUtils" themeMode={mode} toggle={handleToggle} />
+      <Alert alertBox={alert} />
       <div className="container">
         <div className="row">
           <div className="col-md-12">
