@@ -7,12 +7,7 @@ export default function Navbar(props) {
     right: '33px',
     position: 'absolute',
   }
-  // if(props.themeMode == 'dark'){
-  //   props.alert('Dark mode has been enabled successfully', 'success')
-  // }
-  // else{
-  //   props.alert('Light mode has been enabled successfully', 'success')
-  // }
+
   return (
     <>
       <nav
@@ -48,6 +43,7 @@ export default function Navbar(props) {
                   type="checkbox"
                   role="switch"
                   onClick={props.toggle}
+                  checked={props.themeMode === "dark" ? 'checked' : false}
                 />
                 <label className={`form-check-label text-${props.themeMode === 'light' ? 'dark' : 'light'}`}>
                   {props.themeMode === 'light' ? 'Enable' : 'Disable'} DarkMode
