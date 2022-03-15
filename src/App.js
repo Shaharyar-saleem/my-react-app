@@ -30,18 +30,21 @@ function App() {
           msg: message,
           type: typ,
         })
+        setTimeout(() => {
+          setAlert(null)
+        }, 1500);
    }
   return (
     <>
       <Navbar title="TextUtils" themeMode={mode} toggle={handleToggle} />
-      <Alert alertBox={alert} />
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-           <TextBox heading="Enter Text In The Box Bellow" themeMode={mode} />
+           <TextBox heading="Enter Text In The Box Bellow" themeMode={mode} alert={createAlert} />
           </div>
         </div>
       </div>
+      <Alert alertBox={alert} />
     </>
   );
 }

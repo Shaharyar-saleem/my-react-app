@@ -8,25 +8,29 @@ export default function TextBox(props) {
     let enteredText = text
     let upperText = enteredText.toUpperCase()
     setText(upperText)
+    props.alert("Converted to Uppercase", "success")
   }
   const convertToLowerCase = () => {
       let lowercaseTxt = text.toLowerCase()
       setText(lowercaseTxt)
+      props.alert("Converted to Lowercase", "success")
   }
   const convertToCamelCase = () => {
        let camelcaseTxt = text.replace(/(?:^\w|[A-Z]|\b\w)/g, function(text, index) {
         return index === true ? text.toLowerCase() : text.toUpperCase()
       })
       setText(camelcaseTxt)
+      props.alert("Converted to Camelcase", "success")
   }
   const copyToClipboard = () => {
     navigator.clipboard.writeText(text)
-    alert("Text Copied")
+    props.alert("Text has Coppied to Clipboard", "success")
   }
   const clearText = () => {
     const confirm = window.confirm("Are you sure to remove the text?")
     console.log(confirm)
     confirm ? setText("") : setText(text)
+    confirm ? props.alert("Text has Cleared", "success") : props.alert("Text has not been cleared", "warning")
   }
   const updateTextValue = (event) => {
       setText(event.target.value)
