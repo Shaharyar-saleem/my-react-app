@@ -37,12 +37,10 @@ function App() {
       setMode(cookie)
       console.log(cookie)
       if(cookie === "dark"){
-        console.log("mode is dark")
         document.body.style.backgroundColor = 'black'
         document.body.style.color = 'white'
       }
       else{
-        console.log("mode is light")
         document.body.style.backgroundColor = 'white'
         document.body.style.color = 'black'
       }

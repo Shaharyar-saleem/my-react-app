@@ -4,6 +4,13 @@ import propTypes from 'prop-types';
 
 export default function TextBox(props) {
   const [text, setText] = useState("")
+  const [wordCount, setWordCount] = useState(0);
+
+  const wordCounter = () => {
+    const wordsArray = text.trim().split(' ')
+    let length = wordsArray.filter(word => word !== "").length
+    setWordCount(length)
+  }
   const convertToUpperCase = () => {
     let enteredText = text
     let upperText = enteredText.toUpperCase()
@@ -34,6 +41,7 @@ export default function TextBox(props) {
   }
   const updateTextValue = (event) => {
       setText(event.target.value)
+      wordCounter()
   }
 
   return (
@@ -52,7 +60,7 @@ export default function TextBox(props) {
     <div className="container py-4">
         <h2>Your Text Summary</h2>
         <div className="p-2">
-        <p><b>{text.split(' ').length}</b> <i>Words</i> AND <b>{text.length}</b>  <i>Characters</i></p>
+        <p><b>{wordCount}</b> <i>Words</i> AND <b>{text.length}</b>  <i>Characters</i></p>
         <p><b>{0.0032 * text.split(' ').length}</b> Minutes to read this text.</p>
         </div>
         <h2>{text ? 'Preview' : 'Enter Text to preview'}</h2>
