@@ -8,6 +8,8 @@ export default function Navbar(props) {
     position: 'absolute',
   }
 
+  const [checked, setChecked] = useState(false)
+
   return (
     <>
       <nav
@@ -43,7 +45,9 @@ export default function Navbar(props) {
                   type="checkbox"
                   role="switch"
                   onClick={props.toggle}
-                  checked={props.themeMode === "dark" ? 'checked' : false}
+                  checked={props.themeMode === 'dark' ? true : false}
+                  // defaultChecked={props.themeMode === 'dark' ? true : false}
+                  // defaultChecked={true}
                 />
                 <label className={`form-check-label text-${props.themeMode === 'light' ? 'dark' : 'light'}`}>
                   {props.themeMode === 'light' ? 'Enable' : 'Disable'} DarkMode
