@@ -63,6 +63,7 @@ function App() {
        document.body.style.color = 'black'
        createAlert("Light mode has been enabled successfully", "success")
        setCookie("mode", "light", 30)
+       document.title = 'LightMode - Enabled'
      }
      else{
        setMode('dark')
@@ -70,6 +71,7 @@ function App() {
        document.body.style.color = 'white'
        createAlert("Dark mode has been enabled successfully", "success")
        setCookie("mode", "dark", 30)
+       document.title = 'DarkMode - Enabled'
      }
    }
 
@@ -81,6 +83,7 @@ function App() {
       document.body.style.color = 'black'
       createAlert("Secondary mode has been enabled", "success")
       setCookie("mode", "secondary", 30)
+      document.title = 'SecondaryMode - Enabled'
     }
     else{
       console.log("else is working here")
@@ -89,6 +92,7 @@ function App() {
       document.body.style.color = 'black'
       createAlert("Light mode has been enabled", "success")
       setCookie("mode", "light", 30)
+      document.title = 'LightMode - Enabled'
     }
    }
 

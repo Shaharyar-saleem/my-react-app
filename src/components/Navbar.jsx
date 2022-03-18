@@ -8,13 +8,16 @@ export default function Navbar(props) {
     position: 'absolute',
   }
 
+  const linkColor = {
+    color: 'white'
+  }
+
   const [checked, setChecked] = useState(false)
 
   return (
     <>
       <nav
         className={`navbar navbar-expand-lg navbar-${props.themeMode} bg-${props.themeMode}`}
-        style={{color: 'white'}}
       >
         <div className="container-fluid">
           <button
@@ -29,12 +32,12 @@ export default function Navbar(props) {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="#" style={props.themeMode !== 'light' ? linkColor : {color: 'black'}}>
               {props.title}
             </a>
             <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="#" style={props.themeMode !== 'light' ? linkColor : {color: 'black'}}>
                   {props.about}
                 </a>
               </li>
