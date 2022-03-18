@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Contact(props) {
+    
   return (
     <div className="container" style={{ paddingTop: "70px" }}>
       <div className="row">
@@ -11,6 +12,7 @@ export default function Contact(props) {
             <div className="mb-3 mt-4">
               <div className="row">
                 <div className="col-md-6">
+                    <label className="">{props.themeMode === 'secondary' ? 'Name' : ''}</label>
                   <input
                     type="text"
                     placeholder="Enter Your Name"
@@ -18,6 +20,7 @@ export default function Contact(props) {
                   />
                 </div>
                 <div className="col-md-6">
+                <label className="">{props.themeMode === 'secondary' ? 'Email Address' : ''}</label>
                   <input
                     type="email"
                     className={`form-control bg-${props.themeMode}`}
@@ -30,6 +33,7 @@ export default function Contact(props) {
               </div>
               <div className="row mt-2">
                 <div className="col-md-12">
+                <label className="">{props.themeMode === 'secondary' ? 'Subject' : ''}</label>
                   <input
                     type="text"
                     className={`form-control bg-${props.themeMode}`}
