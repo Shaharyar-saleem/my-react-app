@@ -3,6 +3,14 @@ import Navbar from "./components/Navbar";
 import TextBox from './components/TextBox';
 import React, {useState} from 'react';
 import Alert from "./components/Alert";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import About from "./components/About";
 
 function App() {
 
@@ -108,17 +116,20 @@ function App() {
         }, 1500);
    }
   return (
-    <>
+    <Router>
       <Navbar title="TextUtils" themeMode={mode} toggle={handleToggle} toggleSecondary={handleSecondaryToggle} />
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-           <TextBox heading="Enter Text In The Box Bellow" themeMode={mode} alert={createAlert} />
+            <Routes>
+              <Route exact path="/about" element={<About />}></Route>
+              <Route exact path="/" element={<TextBox heading="Enter Text In The Box Bellow" themeMode={mode} alert={createAlert} />}></Route>
+            </Routes>
           </div>
         </div>
       </div>
       <Alert alertBox={alert} />
-    </>
+    </Router>
   );
 }
 

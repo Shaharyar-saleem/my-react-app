@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import propTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   const navToggle = {
@@ -32,14 +33,14 @@ export default function Navbar(props) {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a className="navbar-brand" href="#" style={props.themeMode !== 'light' ? linkColor : {color: 'black'}}>
+            <Link className="navbar-brand" to="/" style={props.themeMode !== 'light' ? linkColor : {color: 'black'}}>
               {props.title}
-            </a>
+            </Link>
             <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link" href="#" style={props.themeMode !== 'light' ? linkColor : {color: 'black'}}>
+                <Link className="nav-link" to="/about" style={props.themeMode !== 'light' ? linkColor : {color: 'black'}}>
                   {props.about}
-                </a>
+                </Link>
               </li>
             </ul>
             <form className="form-inline float-right" style={navToggle}>
