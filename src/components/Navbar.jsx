@@ -42,6 +42,11 @@ export default function Navbar(props) {
                   {props.about}
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/contact" style={props.themeMode !== 'light' ? linkColor : {color: 'black'}}>
+                  Contact Us
+                </Link>
+              </li>
             </ul>
             <form className="form-inline float-right" style={navToggle}>
             <div className="form-check form-switch">

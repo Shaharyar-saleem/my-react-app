@@ -11,6 +11,7 @@ import {
   Link
 } from "react-router-dom";
 import About from "./components/About";
+import Contact from "./components/Contact";
 
 function App() {
 
@@ -123,6 +124,7 @@ function App() {
           <div className="col-md-12">
             <Routes>
               <Route exact path="/about" element={<About />}></Route>
+              <Route exact path="/contact" element={<Contact themeMode={mode} />}></Route>
               <Route exact path="/" element={<TextBox heading="Enter Text In The Box Bellow" themeMode={mode} alert={createAlert} />}></Route>
             </Routes>
           </div>
