@@ -40,6 +40,11 @@ function App() {
         document.body.style.backgroundColor = 'black'
         document.body.style.color = 'white'
       }
+      else if(cookie === "secondary"){
+        document.body.style.backgroundColor = '#808080d1'
+        document.body.style.color = 'black'
+      }
+
       else{
         document.body.style.backgroundColor = 'white'
         document.body.style.color = 'black'
@@ -68,6 +73,25 @@ function App() {
      }
    }
 
+   const handleSecondaryToggle = () => {
+    if(mode === 'light'){
+      console.log("if is working here")
+      setMode('secondary')
+      document.body.style.backgroundColor = '#808080d1'
+      document.body.style.color = 'black'
+      createAlert("Secondary mode has been enabled", "success")
+      setCookie("mode", "secondary", 30)
+    }
+    else{
+      console.log("else is working here")
+      setMode('light')
+      document.body.style.backgroundColor = 'white'
+      document.body.style.color = 'black'
+      createAlert("Light mode has been enabled", "success")
+      setCookie("mode", "light", 30)
+    }
+   }
+
    const [alert, setAlert] = useState(null);
 
    const createAlert = (message, typ) => {
@@ -81,7 +105,7 @@ function App() {
    }
   return (
     <>
-      <Navbar title="TextUtils" themeMode={mode} toggle={handleToggle} />
+      <Navbar title="TextUtils" themeMode={mode} toggle={handleToggle} toggleSecondary={handleSecondaryToggle} />
       <div className="container">
         <div className="row">
           <div className="col-md-12">

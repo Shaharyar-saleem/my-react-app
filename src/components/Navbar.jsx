@@ -14,6 +14,7 @@ export default function Navbar(props) {
     <>
       <nav
         className={`navbar navbar-expand-lg navbar-${props.themeMode} bg-${props.themeMode}`}
+        style={{color: 'white'}}
       >
         <div className="container-fluid">
           <button
@@ -39,15 +40,25 @@ export default function Navbar(props) {
               </li>
             </ul>
             <form className="form-inline float-right" style={navToggle}>
-              <div className="form-check form-switch">
+            <div className="form-check form-switch">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  onClick={props.toggleSecondary}
+                  checked={props.themeMode === 'secondary' ? true : false}
+                />
+                <label className={`form-check-label text-${props.themeMode === 'light' ? 'dark' : 'light'}`}>
+                  {props.themeMode === 'light' ? 'Enable' : 'Disable'} SecondaryMode
+                </label>
+              </div>
+              <div className="form-check form-switch ml-3">
                 <input
                   className="form-check-input"
                   type="checkbox"
                   role="switch"
                   onClick={props.toggle}
                   checked={props.themeMode === 'dark' ? true : false}
-                  // defaultChecked={props.themeMode === 'dark' ? true : false}
-                  // defaultChecked={true}
                 />
                 <label className={`form-check-label text-${props.themeMode === 'light' ? 'dark' : 'light'}`}>
                   {props.themeMode === 'light' ? 'Enable' : 'Disable'} DarkMode

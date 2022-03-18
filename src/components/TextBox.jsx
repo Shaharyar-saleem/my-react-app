@@ -50,11 +50,11 @@ export default function TextBox(props) {
       <div className="mb-3">
           <h1 className='my-4'>{props.heading}</h1>
           <textarea className={`form-control mb-3 bg-${props.themeMode}`} value={text} onChange={updateTextValue} style={{color: `${props.themeMode === 'dark' ? 'white' : 'black'}`}} rows="10"></textarea>
-          <button className="btn btn-primary btn-lg mr-2" onClick={convertToUpperCase}>Convert to UpperCase</button>
-          <button className="btn btn-primary btn-lg mx-2" onClick={convertToLowerCase}>Convert to LowerCase</button>
-          <button className="btn btn-primary btn-lg mx-2" onClick={convertToCamelCase}>Convert to CamelCase</button>
-          <button className="btn btn-primary btn-lg mx-2" onClick={copyToClipboard}>Copy Text</button>
-          <button className="btn btn-primary btn-lg mx-2" onClick={clearText}>Clear Text</button>
+          <button className={`btn btn-${props.themeMode === 'light' ? 'outline-primary' : props.themeMode} btn-lg mr-4`} onClick={convertToUpperCase}>Convert to UpperCase</button>
+          <button className={`btn btn-${props.themeMode === 'light' ? 'outline-primary' : props.themeMode} btn-lg mx-2`} onClick={convertToLowerCase}>Convert to LowerCase</button>
+          <button className={`btn btn-${props.themeMode === 'light' ? 'outline-primary' : props.themeMode} btn-lg mx-2`} onClick={convertToCamelCase}>Convert to CamelCase</button>
+          <button className={`btn btn-${props.themeMode === 'light' ? 'outline-primary' : props.themeMode} btn-lg mx-2`} onClick={copyToClipboard}>Copy Text</button>
+          <button className={`btn btn-${props.themeMode === 'light' ? 'outline-primary' : props.themeMode} btn-lg mx-2`} onClick={clearText}>Clear Text</button>
        </div>
     </div>
     <div className="container py-4">
