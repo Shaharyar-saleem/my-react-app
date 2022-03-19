@@ -123,7 +123,7 @@ function App() {
               <Route
                 exact
                 path="/contact"
-                element={<Contact themeMode={mode} />}
+                element={<Contact themeMode={mode} adminName='Shaharyar' />}
               ></Route>
               <Route
                 exact
