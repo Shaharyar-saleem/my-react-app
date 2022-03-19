@@ -28,6 +28,15 @@ export default function Contact(props) {
       );
   }
 
+  //   styling of the component
+
+  const darkInputStyle = {
+    color: "white",
+  }
+  const lightInputSyle = {
+      color: "black",
+  }  
+
   return (
     <div className="container" style={{ paddingTop: "70px" }}>
       <div className="row">
@@ -47,6 +56,7 @@ export default function Contact(props) {
                     placeholder="Enter Your Name"
                     className={`form-control bg-${props.themeMode}`}
                     name="from_name"
+                    style={props.themeMode === "dark" ? darkInputStyle : lightInputSyle}
                     required
                   />
                 </div>
@@ -59,6 +69,7 @@ export default function Contact(props) {
                     className={`form-control bg-${props.themeMode}`}
                     placeholder="Your Email Address"
                     name="user_email"
+                    style={props.themeMode === "dark" ? darkInputStyle : lightInputSyle}
                     required
                   />
                   <div id="emailHelp" className="form-text">
@@ -75,6 +86,7 @@ export default function Contact(props) {
                     type="text"
                     className={`form-control bg-${props.themeMode}`}
                     placeholder="Subject"
+                    style={props.themeMode === "dark" ? darkInputStyle : lightInputSyle}
                     name="from_title"
                     required
                   />
@@ -89,6 +101,7 @@ export default function Contact(props) {
                 placeholder="Enter Your Message here"
                 rows="7"
                 name="message"
+                style={props.themeMode === "dark" ? darkInputStyle : lightInputSyle}
                 required
               ></textarea>
             </div>
