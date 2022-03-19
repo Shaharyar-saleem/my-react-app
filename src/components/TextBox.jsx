@@ -67,6 +67,7 @@ export default function TextBox(props) {
               props.themeMode === "light" ? "outline-primary" : props.themeMode
             } btn-lg mr-4`}
             onClick={convertToUpperCase}
+            disabled={wordCount > 0 ? false : true}
           >
             Convert to UpperCase
           </button>
@@ -75,6 +76,7 @@ export default function TextBox(props) {
               props.themeMode === "light" ? "outline-primary" : props.themeMode
             } btn-lg mx-2`}
             onClick={convertToLowerCase}
+            disabled={wordCount > 0 ? false : true}
           >
             Convert to LowerCase
           </button>
@@ -83,6 +85,7 @@ export default function TextBox(props) {
               props.themeMode === "light" ? "outline-primary" : props.themeMode
             } btn-lg mx-2`}
             onClick={convertToCamelCase}
+            disabled={wordCount > 0 ? false : true}
           >
             Convert to CamelCase
           </button>
@@ -91,6 +94,7 @@ export default function TextBox(props) {
               props.themeMode === "light" ? "outline-primary" : props.themeMode
             } btn-lg mx-2`}
             onClick={copyToClipboard}
+            disabled={wordCount > 0 ? false : true}
           >
             Copy Text
           </button>
@@ -99,6 +103,7 @@ export default function TextBox(props) {
               props.themeMode === "light" ? "outline-primary" : props.themeMode
             } btn-lg mx-2`}
             onClick={clearText}
+            disabled={wordCount > 0 ? false : true}
           >
             Clear Text
           </button>
