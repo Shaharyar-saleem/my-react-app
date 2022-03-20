@@ -6,8 +6,9 @@ export default function TextBox(props) {
   const [wordCount, setWordCount] = useState(0);
 
   const wordCounter = () => {
-    const wordsArray = text.trim().split(" ");
+    const wordsArray = text.trim().split(/\s+/);
     let length = wordsArray.filter((word) => word !== "").length;
+    console.log(length, text);
     setWordCount(length);
   };
   const convertToUpperCase = () => {
@@ -117,7 +118,7 @@ export default function TextBox(props) {
             <i>Characters</i>
           </p>
           <p>
-            <b>{0.0032 * text.split(" ").length}</b> Minutes to read this text.
+            <b>{(0.0032 * text.split(" ").length).toFixed(2)}</b> Minutes to read this text.
           </p>
         </div>
         <h2>{text ? "Preview" : "Enter Text to preview"}</h2>
