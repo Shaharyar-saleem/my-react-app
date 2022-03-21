@@ -18,11 +18,9 @@ export default function Contact(props) {
       )
       .then(
         (result) => {
-          console.log(result.text);
           setMsgStatus(true);
         },
         (error) => {
-          console.log(error.text);
           setMsgStatus(false);
         }
       );

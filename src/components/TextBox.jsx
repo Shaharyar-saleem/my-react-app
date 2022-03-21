@@ -8,7 +8,6 @@ export default function TextBox(props) {
   const wordCounter = () => {
     const wordsArray = text.trim().split(/\s+/);
     let length = wordsArray.filter((word) => word !== "").length;
-    console.log(length, text);
     setWordCount(length);
   };
   const convertToUpperCase = () => {
@@ -38,7 +37,6 @@ export default function TextBox(props) {
   };
   const clearText = () => {
     const confirm = window.confirm("Are you sure to remove the text?");
-    console.log(confirm);
     confirm ? setText("") : setText(text);
     confirm
       ? props.alert("Text has Cleared", "success")

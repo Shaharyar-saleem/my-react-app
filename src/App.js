@@ -24,7 +24,6 @@ function App() {
       expires = "; expires=" + date.toUTCString();
     }
     document.cookie = name + "=" + (value || "") + expires + "; path=/";
-    console.log("cookie value:", value);
   };
 
   function getCookie(name) {
@@ -42,7 +41,6 @@ function App() {
     if (document.cookie) {
       let cookie = getCookie("mode");
       setMode(cookie);
-      console.log(cookie);
       if (cookie === "dark") {
         document.body.style.backgroundColor = "black";
         document.body.style.color = "white";
@@ -78,7 +76,6 @@ function App() {
 
   const handleSecondaryToggle = () => {
     if (mode === "light") {
-      console.log("if is working here");
       setMode("secondary");
       document.body.style.backgroundColor = "#808080d1";
       document.body.style.color = "black";
@@ -86,7 +83,6 @@ function App() {
       setCookie("mode", "secondary", 30);
       document.title = "SecondaryMode - Enabled";
     } else {
-      console.log("else is working here");
       setMode("light");
       document.body.style.backgroundColor = "white";
       document.body.style.color = "black";
